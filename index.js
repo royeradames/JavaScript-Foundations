@@ -43,23 +43,49 @@ When your math is correct, monthlyRate will equal 1073.64
 */
 // creating different variables numereator, denominatior - using the formula in readme to find it
 // v1: let mortgage = principal [(monthlyInterestRate * Math.pow(( 1 + monthlyInterestRate), periods) ) / [Math.pow(( 1 + monthlyInterestRate), periods) - 1]];
-console.log(monthlyInterestRate + ' :monthlyInterestRate');
-let n1 = Math.pow( [1 + monthlyInterestRate], periods);
-console.log(n1 + ' :n1');
-let numerator = n1 * monthlyInterestRate;
-console.log(numerator+ ' :numerator');
-let denominator = n1 - 1;
-console.log(denominator+ ' :denominator');
-let monthlyMortgagePayment = principal * (numerator/denominator);
-console.log(monthlyMortgagePayment+ ' :monthlyMortgagePayment');
+
+// Royer Adames code below
+
+// console.log(monthlyInterestRate + ' :monthlyInterestRate');
+// let n1 = Math.pow( [1 + monthlyInterestRate], periods);
+// console.log(n1 + ' :n1');
+// let numerator = n1 * monthlyInterestRate;
+// console.log(numerator+ ' :numerator');
+// let denominator = n1 - 1;
+// console.log(denominator+ ' :denominator');
+// let monthlyMortgagePayment = principal * (numerator/denominator);
+// monthlyMortgagePayment = monthlyMortgagePayment.toFixed(2);
+// console.log(monthlyMortgagePayment+ ' :monthlyMortgagePayment');
 // 🏡 Task 3: Function
+
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+function montgageCalculator(){
+    let principal = 200000,
+    interestRate = 0.05,
+    years = 30;
+    const name = 'Royer Adames'
 
+    let monthlyInterestRate = interestRate/12;
+    let periods = years*12; 
 
+    console.log(monthlyInterestRate + ' :monthlyInterestRate');
+    let n1 = Math.pow( [1 + monthlyInterestRate], periods);
+    console.log(n1 + ' :n1');
+    let numerator = n1 * monthlyInterestRate;
+    console.log(numerator+ ' :numerator');
+    let denominator = n1 - 1;
+    console.log(denominator+ ' :denominator');
+    let monthlyMortgagePayment = principal * (numerator/denominator);
+    monthlyMortgagePayment = monthlyMortgagePayment.toFixed(2);
+    console.log(monthlyMortgagePayment+ ' :monthlyMortgagePayment');
 
+    return `${name}, your monthly rate is ${monthlyMortgagePayment}`;
+}
+
+console.log(montgageCalculator());
 
 
 // 🏡 Task 4: Arguments and Parameters
