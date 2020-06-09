@@ -12,7 +12,7 @@ const name = 'Royer Adames'
 
 
 // 🏡 Task 1.5: Simple Math
-/* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
+/* To create a monthly mortgage rate calculator, we need to know the number of years in months and the interest rate in months. 
 
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
@@ -42,10 +42,18 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 // creating different variables numereator, denominatior - using the formula in readme to find it
-let mortgage = principal [(monthlyInterestRate * Math.pow(( 1 + monthlyInterestRate), periods) ) / [Math.pow(( 1 + monthlyInterestRate), periods) - 1]];
-
-
-console.log(mortgage);
+// v1: let mortgage = principal [(monthlyInterestRate * Math.pow(( 1 + monthlyInterestRate), periods) ) / [Math.pow(( 1 + monthlyInterestRate), periods) - 1]];
+console.log(monthlyInterestRate + ' :monthlyInterestRate');
+let n1 = Math.pow(( 1 + monthlyInterestRate), periods);
+console.log(n1 + ' :n1');
+let n2 = n1 * monthlyInterestRate;
+console.log(n2+ ' :n2');
+let numerator = n1 * n2;
+console.log(numerator+ ' :numerator');
+let denominator = n1 - 1;
+console.log(denominator+ ' :denominator');
+let monthlyRate = numerator/denominator;
+console.log(monthlyRate+ ' :monthlyRate');
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
