@@ -62,11 +62,84 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
-function montgageCalculator(){
-    let principal = 200000,
-    interestRate = 0.05,
-    years = 30;
+// function montgageCalculator(){
+//     let principal = 200000,
+//     interestRate = 0.05,
+//     years = 30;
+//     const name = 'Royer Adames'
+
+//     let monthlyInterestRate = interestRate/12;
+//     let periods = years*12; 
+
+//     console.log(monthlyInterestRate + ' :monthlyInterestRate');
+//     let n1 = Math.pow( [1 + monthlyInterestRate], periods);
+//     console.log(n1 + ' :n1');
+//     let numerator = n1 * monthlyInterestRate;
+//     console.log(numerator+ ' :numerator');
+//     let denominator = n1 - 1;
+//     console.log(denominator+ ' :denominator');
+//     let monthlyMortgagePayment = principal * (numerator/denominator);
+//     monthlyMortgagePayment = monthlyMortgagePayment.toFixed(2);
+//     console.log(monthlyMortgagePayment+ ' :monthlyMortgagePayment');
+
+//     return `${name}, your monthly rate is ${monthlyMortgagePayment}`;
+// }
+
+// console.log(montgageCalculator());
+
+
+// 🏡 Task 4: Arguments and Parameters
+/* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
+
+For example,
+mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
+*/
+
+// function montgageCalculator(principal, interestRate, years){
+//     const name = 'Royer Adames'
+
+//     let monthlyInterestRate = interestRate/12;
+//     let periods = years*12; 
+
+//     console.log(monthlyInterestRate + ' :monthlyInterestRate');
+//     let n1 = Math.pow( [1 + monthlyInterestRate], periods);
+//     console.log(n1 + ' :n1');
+//     let numerator = n1 * monthlyInterestRate;
+//     console.log(numerator+ ' :numerator');
+//     let denominator = n1 - 1;
+//     console.log(denominator+ ' :denominator');
+//     let monthlyMortgagePayment = principal * (numerator/denominator);
+//     monthlyMortgagePayment = monthlyMortgagePayment.toFixed(2);
+//     console.log(monthlyMortgagePayment+ ' :monthlyMortgagePayment');
+
+//     return `${name}, your monthly rate is ${monthlyMortgagePayment}`;
+// }
+
+// console.log(montgageCalculator(200000, 0.05, 30));
+
+
+
+
+// 🏡 Task 5: Conditionals
+/* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
+
+Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 5%, if credit score is below 660, interest rate increases by 5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
+
+Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
+*/
+
+
+function montgageCalculator(principal, interestRate, years, creditScore){
     const name = 'Royer Adames'
+
+    // change interest rates depending on credit score
+        // 740+
+    if(creditScore >= 740){
+        interestRate *= .95;
+    } else if(creditScore <= 660){
+        // 660-
+        interestRate *= 1.05;
+    }
 
     let monthlyInterestRate = interestRate/12;
     let periods = years*12; 
@@ -85,29 +158,7 @@ function montgageCalculator(){
     return `${name}, your monthly rate is ${monthlyMortgagePayment}`;
 }
 
-console.log(montgageCalculator());
-
-
-// 🏡 Task 4: Arguments and Parameters
-/* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
-
-For example,
-mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
-*/
-
-
-
-
-
-// 🏡 Task 5: Conditionals
-/* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
-
-Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
-
-Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
-*/
-
-
+console.log(montgageCalculator(200000, 0.05, 30, 800));
 
 
 // 🏡 Task 6: Loops
